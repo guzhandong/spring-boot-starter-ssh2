@@ -16,7 +16,7 @@
 
 ```
 <dependency>
-    <groupId>com.knowlegene.springframework.boot</groupId>
+    <groupId>com.guzhandong.springframework.boot</groupId>
     <artifactId>spring-boot-starter-ssh2</artifactId>
     <version>1.0-SNAPSHOT</version>
 </dependency>
@@ -33,7 +33,7 @@ spring:
     exec:
       ip: 192.168.200.89
       osUsername: ops
-      password: know@2018
+      password: ops@2018
 
 ```
 
@@ -74,7 +74,7 @@ spring:
     exec:
       ip: 192.168.200.89
       osUsername: ops
-      password: know@2018
+      password: ops@2018
       charset: utf-8
       timeout: 300000
 
