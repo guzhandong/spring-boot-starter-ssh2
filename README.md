@@ -40,8 +40,8 @@ spring:
   remote:
     exec:
       ip: 192.168.200.89
-      osUsername: ops
-      password: ops@2018
+      osUsername: username
+      password: password
 
 ```
 
@@ -81,8 +81,8 @@ spring:
   remote:
     exec:
       ip: 192.168.200.89
-      osUsername: ops
-      password: ops@2018
+      osUsername: username
+      password: password
       charset: utf-8
       timeout: 300000
 
