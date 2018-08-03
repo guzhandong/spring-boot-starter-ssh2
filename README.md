@@ -12,6 +12,14 @@
 
 ## quickstart
 
+> install project for maven
+```
+git pull git@github.com:guzhandong/spring-boot-starter-ssh2.git
+cd spring-boot-starter-ssh2 
+mvn clean install
+```
+
+
 > add dependent property in pom.xml
 
 ```
