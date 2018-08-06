@@ -1,4 +1,4 @@
-package com.guzhandong.springframework.boot.ssh2.poll;
+package com.guzhandong.springframework.boot.ssh2.pool;
 
 import org.apache.commons.pool2.PooledObjectFactory;
 import org.apache.commons.pool2.impl.AbandonedConfig;

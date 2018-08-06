@@ -1,8 +1,8 @@
 package com.guzhandong.springframework.boot.ssh2.config;
 
-import com.guzhandong.springframework.boot.ssh2.poll.RemoteExecConnectionFactory;
-import com.guzhandong.springframework.boot.ssh2.poll.RemoteExecConnectionPool;
-import com.guzhandong.springframework.boot.ssh2.poll.RemoteExecPoolConfigure;
+import com.guzhandong.springframework.boot.ssh2.pool.RemoteExecConnectionFactory;
+import com.guzhandong.springframework.boot.ssh2.pool.RemoteExecConnectionPool;
+import com.guzhandong.springframework.boot.ssh2.pool.RemoteExecPoolConfigure;
 import com.guzhandong.springframework.boot.ssh2.remote.RemoteShellExecutor;
 import com.guzhandong.springframework.boot.ssh2.remote.RemoteShellProperties;
 import org.apache.commons.pool2.impl.GenericObjectPool;

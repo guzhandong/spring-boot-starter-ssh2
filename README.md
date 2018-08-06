@@ -85,9 +85,11 @@ spring:
       password: password
       charset: utf-8
       timeout: 300000
+      pool:
+        
 
 ```
 
 ## todo list
 
-1. 修复JMX 在springboot（eureka）集成中不可用的bug，当前默认设置的关闭连接池的JMX
+1. 修复JMX在springboot中和eureka集成导致注册失败，当前默认设置为关闭连接池的JMX来保证集成可用。

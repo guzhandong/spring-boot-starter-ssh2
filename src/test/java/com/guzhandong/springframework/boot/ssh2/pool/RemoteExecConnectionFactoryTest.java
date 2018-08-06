@@ -1,4 +1,4 @@
-package com.guzhandong.springframework.boot.ssh2.poll;
+package com.guzhandong.springframework.boot.ssh2.pool;
 
 import ch.ethz.ssh2.Connection;
 import com.guzhandong.springframework.boot.ssh2.remote.RemoteShellProperties;
