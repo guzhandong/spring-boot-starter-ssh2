@@ -1,6 +1,6 @@
 # spring-boot-starter-ssh2
 
-远程执行shell的springboot依赖包
+远程执行shell的springboot依赖包,其中使用commons-pool2实现了简单的连接池。
 
 > author : guzhandong  
 
@@ -90,4 +90,4 @@ spring:
 
 ## todo list
 
-1. connection poll
+1. 修复JMX 在springboot（eureka）集成中不可用的bug，当前默认设置的关闭连接池的JMX
