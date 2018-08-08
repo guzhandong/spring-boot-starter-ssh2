@@ -16,6 +16,10 @@ import org.springframework.context.annotation.Configuration;
 @ConditionalOnClass({RemoteShellExecutor.class, RemoteShellProperties.class, GenericObjectPool.class})
 public class RemoteShellAutoConfigure {
 
+    /**
+     *
+     * @return {@link RemoteShellProperties}
+     */
     @Bean
     @ConfigurationProperties(prefix = RemoteShellProperties.PREFIX)
     @ConditionalOnProperty(prefix = RemoteShellProperties.PREFIX,value = {"ip","osUsername"})

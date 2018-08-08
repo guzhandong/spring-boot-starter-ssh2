@@ -23,6 +23,10 @@ public class RemoteShellExecutor {
     private int timeOut = 1000 * 5 * 60;
 
 
+    public RemoteShellExecutor(ObjectPool<Connection> connectionObjectPool) {
+        this.connectionObjectPool = connectionObjectPool;
+    }
+
     public RemoteShellExecutor(ObjectPool<Connection> connectionObjectPool, String charset, int timeOut) {
         this.connectionObjectPool = connectionObjectPool;
         this.charset = charset;
@@ -38,16 +42,21 @@ public class RemoteShellExecutor {
         return exec(cmd,null);
     }
 
+
+    public int exec(String cmd,Callback callback) throws Exception {
+        return exec(cmd,null,callback);
+    }
+
     /**
      * 执行shell 方法
      * @param cmd    命令行，示例  `ls /`
      * @param callback 回调接口
      * @return
      */
-    public int exec(String cmd,Callback callback) throws Exception {
+    public int exec(String cmd,Integer resultCode, Callback callback) throws Exception {
 
         Connection conn = connectionObjectPool.borrowObject();
-        int result = -1;
+        int result = 0;
         try {
             logUtil.info("remote exec begin,cmd : {}",cmd);
             long st = System.currentTimeMillis();
@@ -65,9 +74,14 @@ public class RemoteShellExecutor {
                 callback.getStdoutString(outStr);
                 callback.getStderrString(outErr);
             }
-            session.waitForCondition(ChannelCondition.EXIT_STATUS, timeOut);
+            if(resultCode!=null) {
+                session.waitForCondition(ChannelCondition.EXIT_STATUS, timeOut);
+            }
             long et = System.currentTimeMillis();
-            result = session.getExitStatus();
+            Integer res = session.getExitStatus();
+            if (res!=null) {
+                result = res;
+            }
             logUtil.info("remote exec complate,time :{} , result status :{}, cmd : {}",et-st,result,cmd);
             session.close();
         } catch (Exception e) {
