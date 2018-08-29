@@ -36,7 +36,7 @@ public class RemoteExecConnectionFactory implements PooledObjectFactory<Connecti
     }
 
     private Connection createConnection() throws IOException {
-        Connection conn = new Connection(remoteShellProperties.getIp());
+        Connection conn = new Connection(remoteShellProperties.getIp(),remoteShellProperties.getPort());
         conn.connect();
         logUtil.debug("craete connection success");
         return conn;

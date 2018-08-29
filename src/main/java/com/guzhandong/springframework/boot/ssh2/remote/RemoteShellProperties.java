@@ -16,6 +16,11 @@ public class RemoteShellProperties {
 
     private int timeout = 1000 * 5 * 60;
 
+    /**
+     * default
+     */
+    private int port = 22;
+
     public String getIp() {
         return ip;
     }
@@ -54,5 +59,13 @@ public class RemoteShellProperties {
 
     public void setTimeout(int timeout) {
         this.timeout = timeout;
+    }
+
+    public int getPort() {
+        return port;
+    }
+
+    public void setPort(int port) {
+        this.port = port;
     }
 }

@@ -40,6 +40,7 @@ spring:
   remote:
     exec:
       ip: 192.168.200.89
+      port: 22
       osUsername: username
       password: password
 
@@ -81,6 +82,7 @@ spring:
   remote:
     exec:
       ip: 192.168.200.89
+      port: 22
       osUsername: username
       password: password
       charset: utf-8
